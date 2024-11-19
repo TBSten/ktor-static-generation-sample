@@ -1,8 +1,8 @@
-
 [versions]
 kotlin-version = "2.0.21"
 ktor-version = "3.0.1"
 logback-version = "1.4.14"
+ktor-static-generation = "0.1.1"
 
 [libraries]
 ktor-server-core = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor-version" }
@@ -11,7 +11,9 @@ logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "lo
 ktor-server-config-yaml = { module = "io.ktor:ktor-server-config-yaml-jvm", version.ref = "ktor-version" }
 ktor-server-test-host = { module = "io.ktor:ktor-server-test-host-jvm", version.ref = "ktor-version" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin-version" }
+ktor-static-generation = { module = "me.tbsten.ktor:ktor-static-generation", version.ref = "ktor-static-generation" }
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-version" }
 ktor = { id = "io.ktor.plugin", version.ref = "ktor-version" }
+ktorStaticGeneration = { id = "me.tbsten.ktor.static.generation", version.ref = "ktor-static-generation" }

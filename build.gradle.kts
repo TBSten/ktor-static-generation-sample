@@ -1,7 +1,9 @@
+import me.tbsten.ktor.staticGeneration.KtorStaticGenerationTask
 
 plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.ktor)
+    alias(libs.plugins.ktorStaticGeneration)
 }
 
 group = "io.github.tbsten"
@@ -25,4 +27,11 @@ dependencies {
     implementation(libs.ktor.server.config.yaml)
     testImplementation(libs.ktor.server.test.host)
     testImplementation(libs.kotlin.test.junit)
+
+    implementation(libs.ktor.static.generation)
+}
+
+val staticGenerate by tasks.getting(KtorStaticGenerationTask::class) {
+    mainClass.set("io.github.tbsten.StaticGenerationKt")
+    classpath(sourceSets.main.get().runtimeClasspath)
 }
