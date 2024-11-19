@@ -1,15 +1,23 @@
 package io.github.tbsten
 
 import io.ktor.server.application.*
+import io.ktor.server.html.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import kotlinx.coroutines.flow.asFlow
+import kotlinx.html.FlowOrHeadingContent
+import kotlinx.html.body
+import kotlinx.html.h1
 import me.tbsten.ktor.staticGeneration.staticGeneration
 
 fun Application.configureRouting() {
     routing {
         staticGeneration("/") {
-            call.respondText("Hello World!")
+            call.respondHtml {
+                body {
+                    h1 { +"Hello TBSten blog" }
+                }
+            }
         }
 
         staticGeneration(
@@ -19,5 +27,11 @@ fun Application.configureRouting() {
             val blogId = call.parameters["blogId"]
             call.respondText("Hello blog id=$blogId")
         }
+    }
+}
+
+fun FlowOrHeadingContent.pageTitle(title: String) {
+    h1 {
+        +title
     }
 }
