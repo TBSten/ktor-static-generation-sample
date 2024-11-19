@@ -25,7 +25,10 @@ fun Application.configureRouting() {
             }
         }
 
-        staticGeneration("/style.css") {
+        staticGeneration(
+            "/style.css",
+            extension = "",
+        ) {
             call.respondCss {
                 body {
                     fontSize = 16.px
