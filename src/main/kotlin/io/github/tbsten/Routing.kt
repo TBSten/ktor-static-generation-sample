@@ -43,7 +43,21 @@ fun Application.configureRouting() {
             staticPaths = { listOf("/blog/1", "/blog/2").asFlow() },
         ) {
             val blogId = call.parameters["blogId"]
-            call.respondText("Hello blog id=$blogId")
+
+            call.respondHtml {
+                head {
+                    link {
+                        rel = "stylesheet"
+                        href = "../style.css"
+                    }
+                }
+                body {
+                    h1 { +"Blog - $blogId" }
+                    p {
+                        +"Blog $blogId の内容 ".repeat(100)
+                    }
+                }
+            }
         }
     }
 }
