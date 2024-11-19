@@ -29,6 +29,8 @@ dependencies {
     testImplementation(libs.kotlin.test.junit)
 
     implementation(libs.ktor.static.generation)
+    implementation(libs.kotlinx.html)
+    implementation(libs.kotlinx.css)
 }
 
 val staticGenerate by tasks.getting(KtorStaticGenerationTask::class) {
