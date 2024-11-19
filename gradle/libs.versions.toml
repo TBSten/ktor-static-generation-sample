@@ -13,6 +13,7 @@ ktor-server-test-host = { module = "io.ktor:ktor-server-test-host-jvm", version.
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin-version" }
 ktor-static-generation = { module = "me.tbsten.ktor:ktor-static-generation", version.ref = "ktor-static-generation" }
 kotlinx-html = { module = "org.jetbrains.kotlinx:kotlinx-html", version = "0.11.0" }
+ktor-kotlinx-html-builder = { module = "io.ktor:ktor-server-html-builder", version.ref = "ktor-version" }
 kotlinx-css = { module = "org.jetbrains.kotlin-wrappers:kotlin-css", version = "1.0.0-pre.834" }
 
 [plugins]

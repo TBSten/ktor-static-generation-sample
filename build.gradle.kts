@@ -30,6 +30,7 @@ dependencies {
 
     implementation(libs.ktor.static.generation)
     implementation(libs.kotlinx.html)
+    implementation(libs.ktor.kotlinx.html.builder)
     implementation(libs.kotlinx.css)
 }
 
